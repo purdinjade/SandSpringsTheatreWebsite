@@ -9,7 +9,7 @@ html, body, header{
   height: 100%;
 }
 #intro{
-  background: url("images/ComedyShow.jpg") no-repeat center center fixed;
+  background: url("/Images/ComedyShow.jpg") no-repeat center center fixed;
    height: 100%;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -20,21 +20,21 @@ html, body, header{
 /* Slideshow container */
 .slideshow-container {
   max-width: 750px;
-  position: relative;
+  position:static;
   margin: auto;
 }
 
 /* Make the images invisible by default */
-.Containers {
+/* .Containers {
   display: none;
-}
+} */
 
 .carousel_Image{
   height: 500px;
   width: 100%;
 }
 
-/* /* forward & Back buttons */
+/* forward & Back buttons */
 .Back, .forward {
   cursor: pointer;
   position:fixed;
@@ -48,7 +48,7 @@ html, body, header{
   transition: 0.4s ease;
   border-radius: 0 5px 5px 0;
   user-select: none;
-} */
+}
 
 /* Place the "forward button" to the right */
 /* .forward {
@@ -57,9 +57,9 @@ html, body, header{
 } */
 
 /*when the user hovers,add a black background with some little opacity */
-.Back:hover, .forward:hover {
+/* .Back:hover, .forward:hover {
   background-color: rgba(0,0,0,0.8);
-}
+} */
 
 /* Caption Info */
 .Info {
