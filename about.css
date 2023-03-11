@@ -1,6 +1,8 @@
 @import "navbar.css";
 
-
+body{
+  background-color: rgb(194, 182, 133);;
+}
 
 .title{
   margin-left: auto;
