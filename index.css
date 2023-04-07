@@ -15,15 +15,6 @@ body{
 }
 
 
-/* html, body, header{
-  height: 100%;
-} */
-
-/* .carousel{
-  height: 500px;
-} */
-
-
 
 /* Slideshow container */
 .slideshow-container {
@@ -100,12 +91,12 @@ background-color: black;
   animation-duration: 1.4s;
 }
 
-.subscribe-section{
+.subscribe-content{
   margin-top: 5%;
   text-align: center;
-  border-style:solid;
+  border-style: solid;
 }
-.subscribe-CTA{
+#subscribe-cta{
   text-align: center;
 }
 
@@ -117,4 +108,53 @@ background-color: black;
 @keyframes fade {
   from {opacity: .5}
   to {opacity: 2}
+}
+
+@media screen and (max-width:600px) {
+  .column{
+    width: 100%;
+  }
+
+   /* Style the navigation menu */
+  .topnav {
+    overflow: hidden;
+    background-color: #333;
+    position: relative;
+  }
+
+  /* Hide the links inside the navigation menu (except for logo/home) */
+  .topnav #myLinks {
+    display: none;
+  }
+
+  /* Style navigation menu links */
+  .topnav a {
+    color: white;
+    padding: 14px 16px;
+    text-decoration: none;
+    text-align: center;
+    font-size: 17px;
+    display: block;
+  }
+
+  /* Style the hamburger menu */
+  .topnav a.icon {
+    background: black;
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  /* Add a grey background color on mouse-over */
+  .topnav a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+
+  /* Style the active link (or home/logo) */
+  .active {
+    background-color: rgb(194, 182, 133);
+    color: white;
+  } 
 }
