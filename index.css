@@ -1,13 +1,13 @@
 @import "navbar.css";
 
 #intro{
-  background-image: url("Images/snow_white-madera-drew.jpg");
+  background-image: url("images\Murder_Mystery_2024.jpg");
   height: 850px;
   background-repeat: no-repeat;
   background-size: cover; 
-  /* -webkit-background-size: cover;
+  -webkit-background-size: cover;
   -moz-background-size: cover;
-  -o-background-size: cover; */
+  -o-background-size: cover;
 }
 
 body{
