@@ -1,0 +1,160 @@
+@import "navbar.css";
+
+#intro{
+  background-image: url("images\Murder_Mystery_2024.jpg");
+  height: 850px;
+  background-repeat: no-repeat;
+  background-size: cover; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+}
+
+body{
+  background: rgb(194, 182, 133);
+}
+
+
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 750px;
+  height: 500px;
+  position:relative;
+  margin: auto;
+  margin-top: 50px;
+}
+
+/* Make the images invisible by default */
+.Containers {
+  display:flex;
+}
+
+.carousel_Image{
+  height: 500px;
+  width: 750px;
+}
+
+
+/*when the user hovers,add a black background with some little opacity */
+.Back:hover, .forward:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption Info */
+.Info {
+  color: #000000;
+  font-size: 16px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 10px 14px;
+  position:relative;
+  bottom: 10px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Worknumbering (1/3 etc) */
+.MessageInfo {
+  color: #f2f2f3;
+  font-size: 14px;
+  padding: 10px 14px;
+  position: absolute;
+  top: 0;
+}
+
+/* The circles or bullets and indicators */
+.dots {
+  cursor: pointer;
+  height: 16px;
+  width: 16px;
+  margin: 0 3px;
+  background-color: #acc;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.5s ease;
+}
+
+.dots:active{
+background-color: black;
+} 
+
+.enable, .dots:hover {
+  background-color: #717161;
+}
+
+/* Faint animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.4s;
+  animation-name: fade;
+  animation-duration: 1.4s;
+}
+
+.subscribe-content{
+  margin-top: 5%;
+  text-align: center;
+  border-style: solid;
+}
+#subscribe-cta{
+  text-align: center;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .5}
+  to {opacity: 2}
+}
+
+@keyframes fade {
+  from {opacity: .5}
+  to {opacity: 2}
+}
+
+@media screen and (max-width:600px) {
+  .column{
+    width: 100%;
+  }
+
+   /* Style the navigation menu */
+  .topnav {
+    overflow: hidden;
+    background-color: #333;
+    position: relative;
+  }
+
+  /* Hide the links inside the navigation menu (except for logo/home) */
+  .topnav #myLinks {
+    display: none;
+  }
+
+  /* Style navigation menu links */
+  .topnav a {
+    color: white;
+    padding: 14px 16px;
+    text-decoration: none;
+    text-align: center;
+    font-size: 17px;
+    display: block;
+  }
+
+  /* Style the hamburger menu */
+  .topnav a.icon {
+    background: black;
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  /* Add a grey background color on mouse-over */
+  .topnav a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+
+  /* Style the active link (or home/logo) */
+  .active {
+    background-color: rgb(194, 182, 133);
+    color: white;
+  } 
+}
