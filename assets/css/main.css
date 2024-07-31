@@ -1779,14 +1779,14 @@ input, select, textarea {
 /* Image */
 
 	.image {
-		position: relative;
+		position:relative;
 		display: inline-block;
 		border: 0;
 		outline: 0;
 	}
 
 		.image img {
-			display: block;
+			display:block;
 			width: 100%;
 		}
 
@@ -1797,8 +1797,8 @@ input, select, textarea {
 
 		.image.featured {
 			display: block;
-			width: 100%;
-			margin: 0 0 4em 0;
+			width: 50%;
+			margin: auto;
 		}
 
 		.image.left {
@@ -2176,7 +2176,7 @@ input, select, textarea {
 
 	#header {
 		position: relative;
-		background-image: url("../../images/Murder_Mystery_2024.jpg");
+		background-image: url("../../images/2024-2025_Season_Lineup.jpg");
 		background-size: contain;
 		background-repeat: no-repeat;
 		background-position: center center;
