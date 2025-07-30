@@ -2173,10 +2173,11 @@ input, select, textarea {
 		}
 
 /* Header */
+/*HELP ME REMEMBER, THIS IS THE IMPORTANT PART I NEED*/
 
 	#header {
 		position: relative;
-		background-image: url("../../images/2024-2025_Season_Lineup.jpg");
+		background-image: url("/Images/Murder_Mystery_2025.jpg");/*"../../images/2024-2025_Season_Lineup.jpg"       ..\..\images\Murder_Mystery_2025.jpg*/
 		background-size: contain;
 		background-repeat: no-repeat;
 		background-position: center center;
