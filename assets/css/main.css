@@ -2178,7 +2178,7 @@ input, select, textarea {
 /* Should be done. dont touch address yet. */
 	#header {
 		position: relative;
-		background-image: url("../../../Images/Murder_Mystery_2025.jpg");
+		background-image: url("/Images/Murder_Mystery_2025.jpg");
 		background-size: contain;
 		background-repeat: no-repeat;
 		background-position: center center;
