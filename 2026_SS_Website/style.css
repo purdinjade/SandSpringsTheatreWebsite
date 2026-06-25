@@ -1,0 +1,510 @@
+/* --- Sand Springs Black & Gold Palette --- */
+:root {
+    --ss-gold: #ffcc00;       /* Vibrant Gold */
+    --ss-gold-hover: #e6b800; /* Interactive Gold */
+    --ss-black: #111111;      /* Rich Theatre Black */
+    --ss-charcoal: #222222;   /* Alternate Dark Blocks */
+    --ss-light: #fefefe;      /* Body Background */
+    --ss-white: #ffffff;
+    --ss-muted: #666666;
+}
+
+/* --- Global Resets --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+body {
+    background-color: var(--ss-light);
+    color: var(--ss-black);
+    line-height: 1.6;
+}
+
+/* --- Header & Navigation --- */
+header {
+    background-color: var(--ss-black);
+    color: var(--ss-white);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem 8%;
+    border-bottom: 4px solid var(--ss-gold);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo h1 {
+    font-size: 1.4rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.logo span {
+    display: block;
+    font-size: 0.8rem;
+    color: var(--ss-gold);
+    letter-spacing: 3px;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 25px;
+}
+
+nav ul li a {
+    color: var(--ss-white);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    transition: color 0.2s ease-in-out;
+}
+
+nav ul li a:hover {
+    color: var(--ss-gold);
+}
+
+/* --- Hero Section --- */
+.hero-section {
+    background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), 
+                url('https://images.unsplash.com/photo-1516307365426-bea591f05011?q=80&w=1200') no-repeat center center/cover;
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hero-overlay {
+    color: var(--ss-white);
+    padding: 0 20px;
+    max-width: 800px;
+}
+
+.hero-overlay h2 {
+    font-size: 2.8rem;
+    margin-bottom: 15px;
+}
+
+.hero-overlay p {
+    font-size: 1.2rem;
+    margin-bottom: 25px;
+    color: #e0e0e0;
+}
+
+.gold-btn {
+    background-color: var(--ss-gold);
+    color: var(--ss-black);
+    padding: 12px 28px;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 4px;
+    display: inline-block;
+    transition: background-color 0.2s ease;
+}
+
+.gold-btn:hover {
+    background-color: var(--ss-gold-hover);
+}
+
+/* --- Alternating Layout Section --- */
+.season-section {
+    padding: 5rem 8%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.section-title h2 {
+    font-size: 2.2rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.gold-line {
+    width: 60px;
+    height: 4px;
+    background-color: var(--ss-gold);
+    margin: 10px auto 0 auto;
+}
+
+.timeline-container {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+}
+
+.timeline-row {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    background: var(--ss-white);
+    padding: 20px;
+    border-radius: 6px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+}
+
+.timeline-row.reverse {
+    flex-direction: row-reverse;
+}
+
+/* --- IMAGE FIXES AND CONTAINER RULES --- */
+.row-media {
+    flex: 1;
+    height: 250px; /* Forces a uniform height for all rows */
+    position: relative;
+    overflow: hidden; /* Safety wall: chops off images that try to leak out */
+    border-radius: 4px;
+    min-width: 0;    /* Fixes the flexbox minimum sizing layout bug */
+}
+
+.row-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Centers, scales, and fills perfectly without squishing */
+    display: block;
+}
+
+.row-badge {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background-color: var(--ss-black);
+    color: var(--ss-white);
+    padding: 4px 10px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 2px;
+    z-index: 10;
+}
+
+.row-badge.now {
+    background-color: var(--ss-gold);
+    color: var(--ss-black);
+}
+
+/* Description Text Panels */
+.row-text {
+    flex: 1.5;
+}
+
+.dates {
+    color: var(--ss-gold-hover);
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+    margin-bottom: 5px;
+}
+
+.row-text h3 {
+    font-size: 1.6rem;
+    margin-bottom: 12px;
+    color: var(--ss-black);
+}
+
+.description {
+    color: var(--ss-muted);
+    margin-bottom: 20px;
+    font-size: 1rem;
+}
+
+.action-link {
+    color: var(--ss-black);
+    font-weight: bold;
+    text-decoration: none;
+    border-bottom: 2px solid var(--ss-gold);
+    padding-bottom: 2px;
+    transition: color 0.2s;
+}
+
+.action-link:hover {
+    color: var(--ss-gold-hover);
+}
+
+.action-text {
+    color: #999999;
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+/* --- About Section --- */
+.about-section {
+    background-color: var(--ss-charcoal);
+    color: var(--ss-white);
+    padding: 5rem 8%;
+    text-align: center;
+}
+
+.about-container {
+    max-width: 750px;
+    margin: 0 auto;
+}
+
+.about-container h2 {
+    color: var(--ss-gold);
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.about-container p {
+    font-size: 1.1rem;
+    color: #dddddd;
+    margin-bottom: 15px;
+}
+
+/* --- Footer Elements --- */
+footer {
+    background-color: var(--ss-black);
+    color: #999999;
+    padding: 4rem 8% 1.5rem 8%;
+    border-top: 4px solid var(--ss-gold);
+}
+
+.footer-grid {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 40px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.footer-info h3, .footer-links h3 {
+    color: var(--ss-white);
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+}
+
+.footer-info p {
+    margin-bottom: 8px;
+}
+
+.footer-links ul {
+    list-style: none;
+}
+
+.footer-links ul li {
+    margin-bottom: 8px;
+}
+
+.footer-links ul li a {
+    color: #999999;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.footer-links ul li a:hover {
+    color: var(--ss-gold);
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 3.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #222222;
+    font-size: 0.85rem;
+}
+
+/* --- Eye-Popping Spotlight Event Section --- */
+.spotlight-event {
+    background: linear-gradient(135deg, #111111 0%, #222222 100%);
+    border-left: 8px solid var(--ss-gold); /* Aggressive visual accent anchor */
+    margin: 30px auto;
+    max-width: 1100px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Subtle background glowing effect */
+.spotlight-event::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 300px;
+    height: 300px;
+    background: rgba(255, 204, 0, 0.05);
+    filter: blur(80px);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.spotlight-graphic {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.glow-box {
+    background: radial-gradient(circle, #333333 0%, #1a1a1a 100%);
+    border: 2px dashed var(--ss-gold);
+    width: 160px;
+    height: 160px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    box-shadow: 0 0 15px rgba(255, 204, 0, 0.2);
+    /* overflow: hidden; /* CRITICAL: Clips your square image corners to fit the circle */
+}
+
+/* ADD THIS NEW TARGET RULE BELOW IT: */
+.glow-box-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures your event image fills the circle without squishing */
+    display: block;
+}
+
+.ticket-icon {
+    font-size: 4rem;
+}
+
+.spotlight-content {
+    flex: 2.5;
+}
+
+/* Eye-catching pulsing tag */
+.spotlight-badge {
+    display: inline-block;
+    background-color: #ff3344; /* High-attention red badge */
+    color: var(--ss-white);
+    padding: 5px 12px;
+    font-size: 0.75rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    border-radius: 20px;
+    margin-bottom: 15px;
+}
+
+.spotlight-content h2 {
+    color: var(--ss-white);
+    font-size: 2rem;
+    line-height: 1.2;
+    margin-bottom: 8px;
+    font-weight: 800;
+}
+
+.spotlight-date {
+    color: var(--ss-gold);
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.spotlight-desc {
+    color: #cccccc;
+    font-size: 1rem;
+    margin-bottom: 25px;
+    max-width: 650px;
+}
+
+/* Call to Action Buttons */
+.spotlight-actions {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.spotlight-btn-primary {
+    background-color: var(--ss-gold);
+    color: var(--ss-black);
+    padding: 12px 28px;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 4px;
+    box-shadow: 0 4px 10px rgba(255, 204, 0, 0.3);
+    transition: all 0.2s ease;
+}
+
+.spotlight-btn-primary:hover {
+    background-color: var(--ss-gold-hover);
+    transform: translateY(-2px);
+}
+
+.spotlight-btn-secondary {
+    background-color: transparent;
+    color: var(--ss-white);
+    border: 2px solid #444444;
+    padding: 10px 24px;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+}
+
+.spotlight-btn-secondary:hover {
+    border-color: var(--ss-white);
+    background-color: rgba(255,255,255,0.05);
+}
+
+/* Responsive Scaling */
+@media (max-width: 768px) {
+    .spotlight-event {
+        flex-direction: column;
+        padding: 30px 20px;
+        margin: 20px 15px;
+        border-left: none;
+        border-top: 8px solid var(--ss-gold);
+        text-align: center;
+    }
+    .spotlight-actions {
+        justify-content: center;
+    }
+    .spotlight-btn-primary, .spotlight-btn-secondary {
+        width: 100%;
+    }
+}
+
+/* --- Responsive Adaptations --- */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+    .timeline-row, .timeline-row.reverse {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .row-media {
+        width: 100%;
+        height: 200px;
+    }
+    .hero-overlay h2 {
+        font-size: 2rem;
+    }
+    .footer-grid {
+        flex-direction: column;
+        text-align: center;
+    }
+}
