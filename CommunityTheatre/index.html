@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" href="Images\SSCT_Logo.png">
+<title>Sand Springs Community Theatre</title>
+
+<style>
+/* GENERAL STYLING */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f8f5f0;
+    color: #292323;
+    line-height: 1.6;
+}
+
+:root {
+    --burgundy: #651d32;
+    --dark: #21151b;
+    --gold: #d6ad62;
+    --cream: #f8f5f0;
+}
+
+/* NAVIGATION */
+header {
+    background: var(--dark);
+    color: white;
+    padding: 18px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 23px;
+    font-weight: bold;
+    color: var(--gold);
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 25px;
+    font-size: 15px;
+}
+
+nav a:hover {
+    color: var(--gold);
+}
+
+.menu-button {
+    display: none;
+    background: none;
+    color: white;
+    border: none;
+    font-size: 27px;
+    cursor: pointer;
+}
+
+/* HERO SECTION */
+.hero {
+    min-height: 520px;
+    background:
+    linear-gradient(rgba(25,10,18,.7), rgba(25,10,18,.75)),
+    url("https://images.unsplash.com/photo-1503095396549-807759245b35?w=1600")
+    center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    padding: 60px 20px;
+}
+
+.hero-content {
+    max-width: 750px;
+}
+
+.hero h1 {
+    font-size: 55px;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+.button {
+    display: inline-block;
+    background: var(--gold);
+    color: var(--dark);
+    padding: 13px 28px;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: bold;
+    transition: .3s;
+}
+
+.button:hover {
+    background: white;
+    transform: translateY(-3px);
+}
+
+/* GENERAL SECTIONS */
+section {
+    padding: 70px 8%;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.section-title h2 {
+    color: var(--burgundy);
+    font-size: 35px;
+}
+
+.section-title p {
+    color: #777;
+}
+
+/* SHOWS */
+.shows {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.show-card {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px #00000015;
+    transition: .3s;
+}
+
+.show-card:hover {
+    transform: translateY(-7px);
+}
+
+.show-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.show-info {
+    padding: 22px;
+}
+
+.show-info h3 {
+    color: var(--burgundy);
+    font-size: 23px;
+}
+
+.show-info p {
+    margin: 10px 0;
+}
+
+.show-date {
+    color: #98702e;
+    font-weight: bold;
+}
+
+/* ABOUT SECTION */
+.about {
+    background: #eee7df;
+    text-align: center;
+}
+
+.about-content {
+    max-width: 800px;
+    margin: auto;
+}
+
+/* JOIN SECTION */
+.join {
+    background: var(--burgundy);
+    color: white;
+    text-align: center;
+}
+
+.join h2 {
+    font-size: 35px;
+    margin-bottom: 15px;
+}
+
+.join p {
+    margin-bottom: 25px;
+}
+
+/* CONTACT */
+.contact {
+    text-align: center;
+}
+
+.contact p {
+    margin: 10px;
+}
+
+/* FOOTER */
+footer {
+    background: var(--dark);
+    color: white;
+    text-align: center;
+    padding: 25px;
+}
+
+footer span {
+    color: var(--gold); 
+}
+
+/* THEATRE NEWSLETTER SIGNUP */
+
+.newsletter {
+    background: #21151b;
+    color: white;
+    padding: 65px 20px;
+    text-align: center;
+}
+
+.newsletter h2 {
+    color: #d6ad62;
+    font-size: 34px;
+    margin-bottom: 10px;
+}
+
+.newsletter p {
+    margin-bottom: 25px;
+}
+
+.signup-form {
+    max-width: 500px;
+    margin: auto;
+    text-align: left;
+}
+
+.signup-form label {
+    display: block;
+    margin-bottom: 5px;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+.signup-form input {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.signup-form button {
+    width: 100%;
+    margin-top: 25px;
+    padding: 14px;
+    background: #d6ad62;
+    color: #21151b;
+    border: none;
+    border-radius: 5px;
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.signup-form button:hover {
+    background: white;
+}
+
+#signupMessage {
+    margin-top: 20px;
+    font-weight: bold;
+    color: #d6ad62;
+}
+
+/* MOBILE RESPONSIVENESS */
+@media (max-width: 768px) {
+
+    .menu-button {
+        display: block;
+    }
+
+    nav {
+        display: none;
+        position: absolute;
+        top: 65px;
+        left: 0;
+        width: 100%;
+        background: var(--dark);
+        padding: 20px;
+    }
+
+    nav.active {
+        display: flex;
+        flex-direction: column;
+    }
+
+    nav a {
+        margin: 12px;
+    }
+
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    .shows {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+<header>
+    <div class="logo">Sand Springs Community Theatre</div>
+    <a href = "index.html"><img src = "Images\SSCT_Logo.png" alt = "SSCT Logo" width = "150" height = "70"></a>
+
+    <button class="menu-button"
+    onclick="toggleMenu()"
+    aria-label="Toggle navigation"
+    aria-expanded="false">☰</button>
+
+    <nav id="navigation">
+        <a href="#home">Home</a>
+        <a href="#shows">Shows</a>
+        <a href="#about">About</a>
+        <a href="#join">Get Involved</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<!-- HOMEPAGE BANNER -->
+<div class="hero" id="home">
+    <div class="hero-content">
+        <h1>Where Every Story Takes Center Stage</h1>
+
+        <p>
+            Bringing our community together
+            through the magic of live theatre.
+        </p>
+
+        <a href="#shows" class="button">
+            Discover Our Shows
+        </a>
+    </div>
+</div>
+
+<!-- UPCOMING SHOWS -->
+<section id="shows">
+
+    <div class="section-title">
+        <h2>Upcoming Productions</h2>
+        <p>Experience the magic of live performance.</p>
+    </div>
+
+    <div class="shows">
+
+        <div class="show-card">
+            <img src="Images\Christmas_Chaos.png?w=800"
+            alt="Theatrical stage performance">
+
+            <div class="show-info">
+                <h3>Christmas Chaos</h3>
+
+                <p class="show-date">December 5, 2026 at 2:30pm and 7:00pm</p>
+                <p class="show-date">December 6, 2026 at 2:30pm</p>
+                <p>
+                    A plucky, ragtag local theater troupe attempts to pull off the holiday classic with only a few hours of preparation.
+                </p>
+
+                <!-- <a href="#contact" class="button">Get Tickets</a> -->
+            </div>
+        </div>
+
+        <div class="show-card">
+            <img src="Images\The_Wonderful_Wizard_Of_Oz.jpg?w=800"
+            alt="Actors performing on stage">
+
+            <div class="show-info">
+                <h3>The Wizard of Oz</h3>
+
+                <p class="show-date">February 2027</p>
+
+                <p>
+                    <!-- An unforgettable evening of music, drama, and spectacular performances. -->
+                     Dorothy and toto is swept away by a tornado from her Kansas farm to the magical Land of Oz.
+                </p>
+
+                <!-- <a href="#contact" class="button">Get Tickets</a> -->
+            </div>
+        </div>
+
+        <div class="show-card">
+            <img src="Images\The_Boys_Next_Door.png?w=800"
+            alt="Live entertainment performance">
+
+            <div class="show-info">
+                <h3>The Boys Next Door</h3>
+
+                <p class="show-date">April 2027</p>
+
+                <p>
+                    Tells the story of four men with various mental disabilities who have been placed in a group home.
+                </p>
+
+                <!-- <a href="#contact" class="button">Get Tickets</a> -->
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- ABOUT US -->
+<section class="about" id="about">
+
+    <div class="about-content">
+
+        <div class="section-title">
+            <h2>About Our Theatre</h2>
+        </div>
+
+        <p>
+            The Sand Springs Community Theatre is a volunteer-driven, 
+            non-profit organization built by and for the residents of Sand Springs. 
+            From our actors on stage to our set builders, light technicians, and ushering staff, 
+            we thrive on the creative energy of our local community. Get involved! 
+            We present a variety of shows (usually four productions a season), drama, comedy, musicals, and original works.
+        </p>
+
+    </div>
+</section>
+
+<!-- GET INVOLVED -->
+<section class="join" id="join">
+
+    <h2>Be Part of the Magic!</h2>
+
+    <p>
+        Interested in acting, volunteering,
+        helping backstage, or joining our next production?
+    </p>
+
+    <a href="https://www.facebook.com/SandSpringsCommunityTheater" target="_blank" class="button">
+        Get Involved
+    </a>
+
+</section>
+
+<!-- THEATRE NEWSLETTER SIGNUP -->
+
+<section class="newsletter" id="newsletter">
+
+    <h2>Stay in the Spotlight!</h2>
+
+    <p>
+        Get updates about upcoming shows,
+        auditions, ticket sales, and special events!
+    </p>
+
+    <form class="signup-form" id="signupForm">
+
+        <label for="firstName">Full Name</label>
+        <input
+            type="text"
+            id="firstName"
+            placeholder="Enter your full name"
+            autocomplete="name"
+            required>
+
+        <label for="phone">Phone Number</label>
+        <input
+            type="tel"
+            id="phone"
+            placeholder="555-123-4567"
+            autocomplete="tel"
+            required>
+
+        <label for="email">Email Address</label>
+        <input
+            type="email"
+            id="email"
+            placeholder="you@example.com"
+            autocomplete="email"
+            required>
+
+        <div style="margin-top:20px;">
+
+            <label>
+                <input type="checkbox" id="emailConsent" required>
+                I agree to receive theatre news and
+                promotional emails.
+            </label>
+
+            <label style="margin-top:15px;">
+                <input type="checkbox" id="textConsent">
+                I agree to receive promotional text
+                messages from the theatre.
+                Message and data rates may apply.
+                Message frequency varies. Reply STOP
+                to opt out.
+            </label>
+
+        </div>
+
+        <!-- Hidden spam prevention field -->
+        <input
+            type="text"
+            id="website"
+            style="display:none"
+            tabindex="-1"
+            autocomplete="off">
+
+        <button type="submit">
+            Sign Me Up!
+        </button>
+
+        <p id="signupMessage" aria-live="polite"></p>
+
+    </form>
+
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+
+    <div class="section-title">
+        <h2>Contact Us</h2>
+        <p>We would love to hear from you!</p>
+    </div>
+
+    <p><strong>Email:</strong> sandspringstheatre@gmail.com</p>
+
+    <p><strong>Phone:</strong> (918) 237-1662</p>
+
+    <p><strong>Location:</strong> 4th and Garfield, Sand Springs, OK</p>
+
+</section>
+
+<!-- FOOTER -->
+<footer>
+
+    <p>
+        &copy; <span id="year"></span>
+        Sand Springs Community Theatre.
+        All Rights Reserved.
+    </p>
+    <h6>created by Jade Purdin</h6>
+
+</footer>
+
+<!-- JAVASCRIPT -->
+<script>
+
+// GOOGLE SHEETS NEWSLETTER CONNECTION
+
+function doGet() {
+  return ContentService
+    .createTextOutput("Community Theatre Signup System is running!")
+    .setMimeType(ContentService.MimeType.TEXT);
+}
+
+const scriptURL = "https://script.google.com/macros/s/AKfycbyqMLW8GH5qbwfVxHgffGmQcgr6ZzzPyF6tetw4s_PmZDBtdQomaepuAVaz7XpM2IUOmg/exec";
+
+document.getElementById("signupForm")
+.addEventListener("submit", async function(event) {
+
+    event.preventDefault();
+
+    const message = document.getElementById("signupMessage");
+    const button = this.querySelector("button");
+
+    const name = document.getElementById("firstName").value.trim();
+    const phone = document.getElementById("phone").value.trim();
+    const email = document.getElementById("email").value.trim();
+
+    const emailConsent =
+        document.getElementById("emailConsent").checked;
+
+    const textConsent =
+        document.getElementById("textConsent").checked;
+
+    const website =
+        document.getElementById("website").value;
+
+    if (!emailConsent) {
+        message.textContent =
+            "Please agree to receive theatre emails.";
+        return;
+    }
+
+    const data = new URLSearchParams();
+
+    data.append("name", name);
+    data.append("phone", phone);
+    data.append("email", email);
+    data.append("emailConsent", emailConsent ? "Yes" : "No");
+    data.append("textConsent", textConsent ? "Yes" : "No");
+    data.append("website", website);
+
+    button.disabled = true;
+    button.textContent = "Submitting...";
+
+    try {
+
+        await fetch(scriptURL, {
+            method: "POST",
+            mode: "no-cors",
+            body: data
+        });
+
+        message.textContent =
+            "Thank you, " + name +
+            "! Your signup has been sent. Welcome to our theatre family!";
+
+        this.reset();
+
+    } catch (error) {
+
+        message.textContent =
+            "Something went wrong. Please try again.";
+
+        console.error(error);
+
+    } finally {
+
+        button.disabled = false;
+        button.textContent = "Sign Me Up!";
+
+    }
+
+});
+
+
+
+
+// Mobile navigation menu
+function toggleMenu() {
+
+    const nav = document.getElementById("navigation");
+    const button = document.querySelector(".menu-button");
+
+    nav.classList.toggle("active");
+
+    button.setAttribute(
+        "aria-expanded",
+        nav.classList.contains("active")
+    );
+}
+
+// Automatically update copyright year
+document.getElementById("year").textContent =
+    new Date().getFullYear();
+
+
+
+</script>
+
+</body>
+</html>
